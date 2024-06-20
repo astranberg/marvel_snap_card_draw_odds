@@ -1,6 +1,6 @@
 import simulation as sim
 
-# Define the cards
+# Define the cards of the decks
 cards_without_domino = [
     sim.Card("Infinaut", tags=["big"]),
     sim.Card("Magneto", tags=["big"]),
@@ -33,15 +33,18 @@ cards_with_domino = [
 deck_without_domino = sim.Deck(cards_without_domino)
 deck_with_domino = sim.Deck(cards_with_domino)
 
-# Define tag queries
+# Define tag queries, which are essentially saying:
+#    What are the odds of drawing a card tagged "big" by turn 3, tagged "discard" by turn 3, and "revive" by turn 5?
 tag_queries = {
     "big": 3,
     "discard": 3,
     "revive": 5
 }
 
+# Perform the monte-carlos simulation
 odds_without_domino = sim.calculate_odds(deck_without_domino, tag_queries)
 odds_with_domino = sim.calculate_odds(deck_with_domino, tag_queries)
 
+# Print the results!
 print("odds_without_domino", odds_without_domino)
 print("odds_with_domino", odds_with_domino)
