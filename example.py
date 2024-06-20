@@ -1,37 +1,37 @@
-import simulations.py as sim
+import simulation as sim
 
 # Define the cards
 cards_without_domino = [
-    Card("Infinaut", tags=["big"]),
-    Card("Magneto", tags=["big"]),
-    Card("RedHulk", tags=["big"]),
-    Card("Blade", tags=["discard"]),
-    Card("LadySif", tags=["discard"]),
-    Card("GhostRider", tags=["revive"]),
-    Card("Jeff"),
-    Card("BlackKnight"),
-    Card("RedGuardian"),
-    Card("MsMarvel"),
-    Card("Blink"),
-    Card("Sandman")
+    sim.Card("Infinaut", tags=["big"]),
+    sim.Card("Magneto", tags=["big"]),
+    sim.Card("RedHulk", tags=["big"]),
+    sim.Card("Blade", tags=["discard"]),
+    sim.Card("LadySif", tags=["discard"]),
+    sim.Card("GhostRider", tags=["revive"]),
+    sim.Card("Jeff"),
+    sim.Card("BlackKnight"),
+    sim.Card("RedGuardian"),
+    sim.Card("MsMarvel"),
+    sim.Card("Blink"),
+    sim.Card("Sandman")
 ]
 cards_with_domino = [
-    Card("Infinaut", tags=["big"]),
-    Card("Magneto", tags=["big"]),
-    Card("RedHulk", tags=["big"]),
-    Card("Blade", tags=["discard"]),
-    Card("LadySif", tags=["discard"]),
-    Card("GhostRider", tags=["revive"]),
-    Card("Domino", tags=["2"]),  # Always drawn on turn 2
-    Card("BlackKnight"),
-    Card("RedGuardian"),
-    Card("MsMarvel"),
-    Card("Blink"),
-    Card("Sandman")
+    sim.Card("Infinaut", tags=["big"]),
+    sim.Card("Magneto", tags=["big"]),
+    sim.Card("RedHulk", tags=["big"]),
+    sim.Card("Blade", tags=["discard"]),
+    sim.Card("LadySif", tags=["discard"]),
+    sim.Card("GhostRider", tags=["revive"]),
+    sim.Card("Domino", tags=["2"]),  # Always drawn on turn 2
+    sim.Card("BlackKnight"),
+    sim.Card("RedGuardian"),
+    sim.Card("MsMarvel"),
+    sim.Card("Blink"),
+    sim.Card("Sandman")
 ]
 
-deck_without_domino = Deck(cards_without_domino)
-deck_with_domino = Deck(cards_with_domino)
+deck_without_domino = sim.Deck(cards_without_domino)
+deck_with_domino = sim.Deck(cards_with_domino)
 
 # Define tag queries
 tag_queries = {
@@ -40,8 +40,8 @@ tag_queries = {
     "revive": 5
 }
 
-odds_without_domino = calculate_odds(deck_without_domino, tag_queries)
-odds_with_domino = calculate_odds(deck_with_domino, tag_queries)
+odds_without_domino = sim.calculate_odds(deck_without_domino, tag_queries)
+odds_with_domino = sim.calculate_odds(deck_with_domino, tag_queries)
 
 print("odds_without_domino", odds_without_domino)
 print("odds_with_domino", odds_with_domino)
